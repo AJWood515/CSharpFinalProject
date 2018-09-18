@@ -1,0 +1,9 @@
+﻿body {
+}
+
+p.check{
+    width: 250px;
+    height: 250px;
+    border-color:black;
+    background-color: red;
+}

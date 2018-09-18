@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="final.Site1" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>T-shirt Express</title>
+
+        <%-- favicon links--%>
+        <link rel="apple-touch-icon" sizes="57x57" href="Images/favicon/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="Images/favicon/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="Images/favicon/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="Images/favicon/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="Images/favicon/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="Images/favicon/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="Images/favicon/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="Images/favicon/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192"  href="Images/favicon/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="Images/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="Images/favicon/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <%-- ^favicon links^ --%>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/footable.bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/main.css" rel="stylesheet" />
+        <script src="Scripts/jquery-3.2.1.min.js"></script>
+        <script src="Scripts/footable.min.js"></script>
+
+        <asp:ContentPlaceHolder ID="headPlaceholder" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <script src="Scripts/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <form id="form1" runat="server">
+
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="homepage.aspx">T-Shirt Express</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="nav navbar-nav">
+                                <asp:ContentPlaceHolder ID="navPlaceHolder" runat="server">
+                                    <li class="active"><a href="homepage.aspx">Home</a></li>
+                                    <li><a href="UploadPage.aspx">Custom Design</a></li>
+                                </asp:ContentPlaceHolder>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <% if(Session["New"]!= null) { %>
+                                     
+                                <li><a>Welcome!</a></li>
+                                <li><a href="#" runat="server" onServerClick="logout">Logout</a></li>
+                             
+                                <%}else{  %>   
+                        
+                                <li><a href="login.aspx">Login</a></li>
+                                <li><a href="CreateAccount.aspx">Create Account</a></li>
+                                <% } %>
+                                <li><a href="Cart.aspx">
+                                <img src="Images/add-to-cart-dark-crop2.png" height="18" width="23" alt="Cart" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <header class="jumbotron">
+                    <img src="Images/logo-main.png" height="200" width="151" alt="T-shirt Express" />
+                    <h1>All Aboard!</h1>
+                </header>
+
+                <main>
+                    <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+    
+                <footer>
+                    <nav class="navbar navbar-inverse">
+                        <div class="container">
+                            <h5>T-Shirt Express &#9672; 123 Main St &#9672; 555-123-4567</h5>
+                        </div>
+                    </nav>
+                </footer>
+
+            </form> 
+        </div> <!-- end of container -->
+    </body>
+</html>

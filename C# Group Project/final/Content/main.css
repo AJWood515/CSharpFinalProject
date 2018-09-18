@@ -1,0 +1,72 @@
+﻿body {
+    background: url(/Images/t-shits-on-hangers.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    text-align: center;
+}
+
+main {
+    background-color: rgba(240, 232, 217, 0.6);
+    padding: 3em;
+    border-radius: 8px;
+    margin-bottom: 1.2em;
+}
+
+input[type=image] {
+    padding: 0.5em;
+    border-radius: 12px;
+}
+
+input[type=image]:hover {
+    filter:drop-shadow(0 0 12px #4d3300);
+}
+
+h2, h3 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+h5 {
+    padding-top: 0.4em;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: cornflowerblue;
+    color: black;
+}
+
+.jumbotron {
+    background-color: rgba(153, 102, 51, 0.8);
+}
+
+.jumbotron h1 {
+        color: #802000;
+        font-style:italic;
+}
+
+#ulListID li {
+    text-align:left;
+}
+
+td {
+    padding-right:5px;
+    text-align:center;
+}
+
+th {
+    text-align:center;
+}
+
+@media only screen and (min-width: 968px){
+    .hpRow {
+        margin:0 auto 0 2em;
+    }
+
+    .divUploadRow {
+        margin-top:1.5em;
+    }
+}

@@ -1,0 +1,9 @@
+﻿ .navbar-nav {
+      flex-direction: row;
+    }
+    
+    .nav-link {
+      padding: 4px 0px 4px 8px;
+    text-align: right;
+    float: right !important;
+    }
